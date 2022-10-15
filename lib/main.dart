@@ -1,3 +1,4 @@
+import 'package:doctor/Screens/firsyscreen/Onboarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           highlightColor: Colors.transparent,
           primarySwatch: Colors.blue,
         ),
-        home:,
+        home:Onboarding(),
     );
   }
 }

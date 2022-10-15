@@ -1,3 +1,4 @@
+import 'package:doctor/Screens/home/homescreen.dart';
 import 'package:doctor/size_config.dart';
 import 'package:flutter/material.dart';
 class Onboarding extends StatefulWidget {
@@ -41,6 +42,10 @@ class _OnboardingState extends State<Onboarding> {
           Padding(
             padding: EdgeInsets.only(left: getWidth(40)),
             child: InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePage())),
               child: Container(
                 height: getHeight(50),
                 width: getWidth(125),

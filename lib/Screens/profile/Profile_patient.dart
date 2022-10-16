@@ -12,6 +12,6 @@ class _ProfilePatState extends State<ProfilePat> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container()
+    return Container();
   }
 }

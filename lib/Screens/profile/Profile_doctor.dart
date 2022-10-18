@@ -104,7 +104,7 @@ Positioned(child: Text('Upcoming Schedules',
   ),),
 left: getWidth(25),
   top: getHeight(358),
-)
+),
 
             ]),
             top: getHeight(249),

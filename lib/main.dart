@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           highlightColor: Colors.transparent,
           primarySwatch: Colors.blue,
         ),
-        home:Onboarding(),
+          home:ProfileDoc(),
 
     );
   }

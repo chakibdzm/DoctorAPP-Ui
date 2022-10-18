@@ -194,11 +194,9 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: getHeight(20),),
             Expanded(
               child: Padding(padding: EdgeInsets.only(left: getWidth(25),right: getWidth(25)),
-                  child:  SingleChildScrollView(
-
-                  child: Flexible(
+                  child:  Flexible(
                   child: ListView.separated(
-                    
+
                     separatorBuilder: (BuildContext context, int index) {
                       return SizedBox(
                         height: getHeight(15),
@@ -216,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         )
 
-    )))),
+    ))),
             )
 
 

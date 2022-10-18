@@ -100,7 +100,6 @@ Positioned(child: Text('Upcoming Schedules',
     fontWeight: FontWeight.w700,
     color: Colors.black,
 
-
   ),),
 left: getWidth(25),
   top: getHeight(358),

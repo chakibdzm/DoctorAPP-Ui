@@ -1,3 +1,4 @@
+import 'package:doctor/Screens/profile/Profile_doctor.dart';
 import 'package:doctor/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,6 +11,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Map<String, String>> categories=[
+    {
+      'image': 'assets/illustrations/Frame.svg',
+      'title':'Dental \nSurgeon',
+
+    },
+    {
+      'image':'assets/illustrations/Group1.svg',
+      'title':'Heart \nSurgeon'
+
+    },
+    {
+      'image':'assets/illustrations/Frame1.svg',
+      'title': 'Eye \n specialiste',
+    }
+  ];
+  List<Map<String,Color>> colors=[
+    {
+      'color': Color(0xFF4B7FFB),
+    },
+    {'color': Color(0xFFFFB167),
+    },
+    {
+      'color':Color(0xFFEF716B),
+    }
+
+
+  ];
+
+
+
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -139,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               scrollDirection: Axis.horizontal,
-            itemCount: 13,
+            itemCount: 3,
             shrinkWrap: true,
             itemBuilder: (BuildContext context, int index) =>
             Stack(
@@ -159,15 +192,15 @@ class _HomePageState extends State<HomePage> {
                   width: getWidth(84),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(getHeight(17)),
-                    color: Color(0xFF4B7FFB)
+                    color: colors[index]['color'],
                   ),
                   child: Center(
-                    child: SvgPicture.asset('assets/illustrations/Frame.svg'),
+                    child: SvgPicture.asset(categories[index]['image'].toString()),
                   ),
                 ),
                 left: getWidth(36),
                 bottom: getHeight(68),),
-                Positioned(child: Text('Dental \nSurgeon',
+                Positioned(child: Text(categories[index]['title'].toString(),
                 style: TextStyle(
                   fontSize: getHeight(16),
                   fontWeight: FontWeight.w600,
@@ -206,13 +239,47 @@ class _HomePageState extends State<HomePage> {
                     itemCount: 13,
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) =>
-                        Container(
-                          height: getHeight(87),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(getHeight(18)),
-                            color: Colors.blue,
+                    InkWell(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfileDoc())),
+                      child: Stack(
+                        children: [
+                          Positioned(child:     Container(
+                            height: getHeight(87),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(getHeight(18)),
+                              color: Colors.white,
+                            ),
+                          ),),
+
+                          Positioned(child: Image.asset('assets/illustrations/5 1.png'),
+                          left: getWidth(20),
+                            top: getHeight(11),
                           ),
-                        )
+                          Positioned(child: Text('Dr. Stella Kane',
+                          style: TextStyle(
+                            fontSize: getHeight(16),
+                            fontWeight: FontWeight.w700,
+                          ),
+                          ),
+                          top: getHeight(19),
+                            left: getWidth(88),
+                          ),
+                          Positioned(child: Text('Heart Surgeon - Flower Hospitals',
+                            style: TextStyle(
+                              fontSize: getHeight(14),
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey,
+                            ),
+                          ),
+                            top: getHeight(43),
+                            left: getWidth(89),
+                          )
+                        ],
+                      ),
+                    )
 
     ))),
             )

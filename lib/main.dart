@@ -1,4 +1,5 @@
 import 'package:doctor/Screens/firsyscreen/Onboarding.dart';
+import 'package:doctor/Screens/home/homescreen.dart';
 import 'package:doctor/Screens/profile/Profile_doctor.dart';
 import 'package:doctor/Screens/profile/Profile_patient.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           highlightColor: Colors.transparent,
           primarySwatch: Colors.blue,
         ),
-          home:ProfileDoc(),
+          home:Onboarding(),
 
     );
   }

@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   List<Map<String, String>> categories=[
     {
       'image': 'assets/illustrations/Frame.svg',
@@ -193,15 +194,21 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                   )),
-                  Positioned(child: Container(
-                    height: getHeight(83),
-                    width: getWidth(84),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(getHeight(17)),
-                      color: colors[index]['color'],
-                    ),
-                    child: Center(
-                      child: SvgPicture.asset(categories[index]['image'].toString()),
+                  Positioned(child: InkWell(
+                    onTap: (){
+                      print('pressed');
+
+                    },
+                    child: Container(
+                      height: getHeight(83),
+                      width: getWidth(84),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(getHeight(17)),
+                        color: colors[index]['color'],
+                      ),
+                      child: Center(
+                        child: SvgPicture.asset(categories[index]['image'].toString()),
+                      ),
                     ),
                   ),
                   left: getWidth(36),

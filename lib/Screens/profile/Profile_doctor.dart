@@ -15,16 +15,21 @@ class _ProfileDocState extends State<ProfileDoc> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
-
+        clipBehavior: Clip.none,
         children: [
+
           Positioned(
-            child: FittedBox(
-              child: Image.asset(
-                'assets/illustrations/Illustration1.png',
+            child: Container(
+              width: getWidth(375),
+
+              child: Center(
+                child: Image.asset(
+                  'assets/illustrations/Illustration1.png',
+                ),
               ),
-              fit: BoxFit.fill,
+              
             ),
-            right: 9,
+            top: 0,
           ),
           Positioned(
             child: Stack(children: [
@@ -48,7 +53,7 @@ class _ProfileDocState extends State<ProfileDoc> {
                 top: getHeight(41),
               ),
               Positioned(child: Image.asset('assets/illustrations/5 1.png'),
-              
+
               left: getWidth(25),
                 top: getHeight(25),
               ),
@@ -68,7 +73,7 @@ class _ProfileDocState extends State<ProfileDoc> {
                 fontSize: getHeight(16),
                 fontWeight: FontWeight.w700,
                 color: Colors.black,
-                
+
 
               ),),
               left: getWidth(25),
@@ -90,7 +95,7 @@ class _ProfileDocState extends State<ProfileDoc> {
                 left: getWidth(25),
                 top: getHeight(204),
               ),
-              
+
 
 
 
@@ -109,7 +114,7 @@ left: getWidth(25),
             top: getHeight(249),
           ),
 
-          
+
         ],
       ),
     );
